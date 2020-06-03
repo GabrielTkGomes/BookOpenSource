@@ -95,7 +95,7 @@
                     <article class="uk-article">
                         <header>
                             <h1 class="uk-article-title uk-margin-bottom">{{$article->title}}</h1>
-                            <div class="author-box uk-card">
+                            <!-- <div class="author-box uk-card">
                                 <div class="uk-card-header uk-padding-remove">
                                     <div class="uk-grid-small uk-flex-middle  uk-position-relative" uk-grid>
                                         <div class="uk-width-auto">
@@ -109,41 +109,27 @@
                                         
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </header>
                         <div class="entry-content uk-margin-medium-top">
-                            <p class="uk-text-lead">{{$article->description}}</p>
+                            <p class="uk-text-lead">{{$article->description}} </p>
                             @section('TopicosFull')
                                 
                             @show
                         </div>
                         <hr>
-                        <div class="uk-child-width-1-2@s text-dark article-related uk-margin-medium-top" uk-grid>
-                            <div>
-                                <h3>Artigos Relacionados</h3>
-                                <ul class="uk-list uk-list-large">
-                                    @section('ArtigosRelacionados')
-                                        
-                                    @show
-                                </ul>
-                            </div>
-                            <div>
-                                <h3>Você viu recentemente</h3> {{-- Não sei como fazer --}}
-                                <ul class="uk-list uk-list-large">
-                                    @section('ArtigosRecentementeVistos')
-                                        
-                                    @show
-                                </ul>
-                            </div>
+                        <div class="row">
+                            <iframe class="" src="../articles/{{$article->book_pdf}}" style="width: -webkit-fill-available;height: -webkit-fill-available;"></iframe>
                         </div>
+                        
                     </article>
                 </div>
                 <div class="uk-width-1-4@m">
                     <div uk-sticky="offset: 100" class="scrollspy uk-sticky uk-active uk-card uk-card-small uk-card-body uk-padding-remove-top uk-visible@m">
-                        <h3 class="uk-card-title">Tabela dos Topicos</h3>
+                        <h3 class="uk-card-title">Artigos Relacionados</h3>
                         <ul class="uk-nav uk-nav-default" uk-scrollspy-nav="closest: li; scroll: true; offset: 30">
-                            @section('TopicosMenu')
-                                
+                            @section('ArtigosRelacionados')
+                                        
                             @show
                         </ul>
                     </div>
